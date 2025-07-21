@@ -12,7 +12,8 @@ public class Employee {
     int id;
     String name;
     LocalDate dob;
-    String department;
+    // Phòng ban của nhân viên
+    Department department;
     double salary;
     String email;
     String phone;

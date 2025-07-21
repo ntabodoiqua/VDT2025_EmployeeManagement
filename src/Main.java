@@ -4,37 +4,86 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("==== Chương trình quản lý nhân viên ====");
+        // Hiển thị menu chức năng
         System.out.println("Chọn chức năng:");
-        System.out.println("1. Thêm nhân viên");
-        System.out.println("2. Hiển thị danh sách nhân viên");
-        System.out.println("3. Tìm kiếm nhân viên theo ID");
-        System.out.println("4. Cập nhật thông tin nhân viên");
-        System.out.println("5. Xóa nhân viên");
-        System.out.println("6. Thoát");
+        // Các chức năng quản lý nhân viên
+        System.out.println("NV1. Thêm nhân viên");
+        System.out.println("NV2. Hiển thị danh sách nhân viên");
+        System.out.println("NV3. Tìm kiếm nhân viên theo ID");
+        System.out.println("NV4. Tìm kiếm nhân viên theo tên");
+        System.out.println("NV5. Cập nhật thông tin nhân viên");
+        System.out.println("NV6. Xóa nhân viên");
+        System.out.println("NV7. Thống kê nhân viên");
+        // Các chức năng quản lý phòng ban
+        System.out.println("PB1. Thêm phòng ban");
+        System.out.println("PB2. Hiển thị danh sách phòng ban");
+        System.out.println("PB3. Tìm kiếm phòng ban theo tên");
+        System.out.println("PB4. Cập nhật thông tin phòng ban");
+        System.out.println("PB5. Xóa phòng ban");
+        System.out.println("PB6. Thêm nhân viên vào phòng ban");
+        System.out.println("PB7. Hiển thị danh sách nhân viên trong phòng ban");
+        System.out.println("PB8. Xóa nhân viên khỏi phòng ban");
+        System.out.println("PB9. Thống kê nhân viên trong phòng ban");
+        // Thoát chương trình
+        System.out.println("0. Thoát");
         System.out.println("========================================");
+        EmployeeManagerImp employeeManagerImp = new EmployeeManagerImp();
+        DepartmentManagerImp departmentManagerImp = new DepartmentManagerImp();
         while (true) {
-            EmployeeManagerImp employeeManagerImp = new EmployeeManagerImp();
             System.out.print("Nhập lựa chọn của bạn: ");
-            int choice = scanner.nextInt();
-            scanner.nextLine(); // Đọc ký tự newline sau khi nhập số
+            String choice = scanner.nextLine().trim().toUpperCase();
+            // Xử lý lựa chọn của người dùng
             switch (choice) {
-                case 1:
+                case "NV1":
                     employeeManagerImp.addEmployee(scanner);
                     break;
-                case 2:
-                    employeeManagerImp.displayEmployees();
+                case "NV2":
+                    employeeManagerImp.displayEmployees(scanner);
                     break;
-                case 3:
+                case "NV3":
                     employeeManagerImp.searchEmployeeById(scanner);
                     break;
-                case 4:
+                case "NV4":
+                    employeeManagerImp.searchEmployeeByName(scanner);
+                    break;
+                case "NV5":
                     employeeManagerImp.updateEmployee(scanner);
                     break;
-                case 5:
+                case "NV6":
                     employeeManagerImp.deleteEmployee(scanner);
                     break;
-                case 6:
-                    System.out.println("Thoát chương trình.");
+                case "NV7":
+                    employeeManagerImp.statistics(scanner);
+                    break;
+                case "PB1":
+                    departmentManagerImp.addDepartment(scanner);
+                    break;
+                case "PB2":
+                    departmentManagerImp.displayDepartments(scanner);
+                    break;
+                case "PB3":
+                    departmentManagerImp.searchDepartmentByName(scanner);
+                    break;
+                case "PB4":
+                    departmentManagerImp.updateDepartment(scanner);
+                    break;
+                case "PB5":
+                    departmentManagerImp.deleteDepartment(scanner);
+                    break;
+                case "PB6":
+                    departmentManagerImp.addEmployeeToDepartment(scanner);
+                    break;
+                case "PB7":
+                    departmentManagerImp.displayEmployeesInDepartment(scanner);
+                    break;
+                case "PB8":
+                    departmentManagerImp.deleteEmployeeFromDepartment(scanner);
+                    break;
+                case "PB9":
+                    departmentManagerImp.statisticsInDepartment(scanner);
+                    break;
+                case "0":
+                    System.out.println("Cảm ơn bạn đã sử dụng chương trình. Tạm biệt!");
                     scanner.close();
                     return;
                 default:
