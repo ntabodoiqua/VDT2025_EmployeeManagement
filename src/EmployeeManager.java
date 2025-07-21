@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
-public interface EmoloyeeManager {
-    void addEmployee();
+public interface EmployeeManager {
+    void addEmployee(Scanner scanner);
 
     void displayEmployees();
 
-    void searchEmployeeById();
+    void searchEmployeeById(Scanner scanner);
 
-    void updateEmployee();
+    void updateEmployee(Scanner scanner);
 
-    void deleteEmployee();
+    void deleteEmployee(Scanner scanner);
 }
