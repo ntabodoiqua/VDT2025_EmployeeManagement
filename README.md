@@ -44,7 +44,7 @@ employee_management/
 └── README.md                       # Tài liệu dự án
 ```
 
-## 🔧 Yêu cầu hệ thống
+## Yêu cầu hệ thống
 
 - **Java**: JDK 11 hoặc cao hơn
 - **IDE**: IntelliJ IDEA, Eclipse, hoặc bất kỳ IDE Java nào
@@ -81,7 +81,7 @@ java -cp ".:lib/*" -Dsrc.dir=src Main
 # Chạy file Main.java
 ```
 
-## 📖 Hướng dẫn sử dụng
+## Hướng dẫn sử dụng
 
 ### Khởi động ứng dụng
 
@@ -130,7 +130,7 @@ public class Department {
 }
 ```
 
-## 📚 API Documentation
+## API Documentation
 
 ### EmployeeManager Interface
 
