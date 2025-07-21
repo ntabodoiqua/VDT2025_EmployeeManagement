@@ -72,6 +72,16 @@ public class EmployeeManagerImp implements EmployeeManager{
     @Override
     public void searchEmployeeById(Scanner scanner) {
         System.out.print("Nhập ID nhân viên cần tìm: ");
+        try {
+            if (!scanner.hasNextInt()) {
+                System.out.println("ID phải là một số nguyên. Vui lòng nhập lại.");
+                scanner.nextLine(); // Đọc ký tự không hợp lệ
+                return;
+            }
+        } catch (Exception e) {
+            System.out.println("Lỗi khi nhập ID: " + e.getMessage());
+            return;
+        }
         int id = scanner.nextInt();
         scanner.nextLine();
         Employee employeeToFind = null;
@@ -123,6 +133,16 @@ public class EmployeeManagerImp implements EmployeeManager{
     @Override
     public void updateEmployee(Scanner scanner) {
         System.out.print("Nhập ID nhân viên cần cập nhật: ");
+        try {
+            if (!scanner.hasNextInt()) {
+                System.out.println("ID phải là một số nguyên. Vui lòng nhập lại.");
+                scanner.nextLine(); // Đọc ký tự không hợp lệ
+                return;
+            }
+        } catch (Exception e) {
+            System.out.println("Lỗi khi nhập ID: " + e.getMessage());
+            return;
+        }
         int id = scanner.nextInt();
         scanner.nextLine(); // Đọc ký tự newline sau khi nhập số
         Employee employeeToUpdate = null;
@@ -177,8 +197,18 @@ public class EmployeeManagerImp implements EmployeeManager{
     @Override
     public void deleteEmployee(Scanner scanner) {
         System.out.print("Nhập ID nhân viên cần xóa: ");
+        try {
+            if (!scanner.hasNextInt()) {
+                System.out.println("ID phải là một số nguyên. Vui lòng nhập lại.");
+                scanner.nextLine(); // Đọc ký tự không hợp lệ
+                return;
+            }
+        } catch (Exception e) {
+            System.out.println("Lỗi khi nhập ID: " + e.getMessage());
+            return;
+        }
         int id = scanner.nextInt();
-        scanner.nextLine(); // Đọc ký tự newline sau khi nhập số
+        scanner.nextLine();
         Employee employeeToDelete = null;
         for (Employee employee : employees) {
             if (employee.getId() == id) {

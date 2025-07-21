@@ -113,9 +113,15 @@ public class DepartmentManagerImp implements DepartmentManager{
         System.out.println("Nhập ID phòng ban để thêm nhân viên:");
         System.out.println("Danh sách phòng ban hiện tại: ");
         displayDepartments(scanner);
+        // Kiểm tra ID nhập vào có hợp lệ không
+        // Nếu ID không phải là số nguyên dương, thông báo lỗi và yêu cầu nhập lại
+        if (!scanner.hasNextInt()) {
+            System.out.println("ID phòng ban phải là một số nguyên dương. Vui lòng nhập lại.");
+            scanner.nextLine();
+            return;
+        }
         int departmentId = scanner.nextInt();
         scanner.nextLine();
-
         Department department = null;
         for (Department dep : departments) {
             if (dep.getId() == departmentId) {
@@ -144,6 +150,17 @@ public class DepartmentManagerImp implements DepartmentManager{
                         employee.getPhone());
             }
         }
+        try {
+            if (!scanner.hasNextInt()) {
+                System.out.println("ID nhân viên phải là một số nguyên dương. Vui lòng nhập lại.");
+                scanner.nextLine();
+                return;
+            }
+        } catch (Exception e) {
+            System.out.println("Đã xảy ra lỗi khi nhập ID nhân viên. Vui lòng thử lại.");
+            scanner.nextLine();
+            return;
+        }
         int employeeId = scanner.nextInt();
         scanner.nextLine();
         Employee employeeToAdd = null;
@@ -170,6 +187,11 @@ public class DepartmentManagerImp implements DepartmentManager{
         System.out.println("Nhập ID phòng ban để hiển thị danh sách nhân viên:");
         System.out.println("Danh sách phòng ban hiện tại: ");
         displayDepartments(scanner);
+        if (!scanner.hasNextInt()) {
+            System.out.println("ID phòng ban phải là một số nguyên dương. Vui lòng nhập lại.");
+            scanner.nextLine();
+            return;
+        }
         int departmentId = scanner.nextInt();
         scanner.nextLine();
 
@@ -204,6 +226,11 @@ public class DepartmentManagerImp implements DepartmentManager{
         System.out.println("Nhập ID phòng ban để xóa nhân viên:");
         System.out.println("Danh sách phòng ban hiện tại: ");
         displayDepartments(scanner);
+        if (!scanner.hasNextInt()) {
+            System.out.println("ID phòng ban phải là một số nguyên dương. Vui lòng nhập lại.");
+            scanner.nextLine();
+            return;
+        }
         int departmentId = scanner.nextInt();
         scanner.nextLine();
 
@@ -232,6 +259,17 @@ public class DepartmentManagerImp implements DepartmentManager{
                     employee.getSalary(),
                     employee.getEmail(),
                     employee.getPhone());
+        }
+        try {
+            if (!scanner.hasNextInt()) {
+                System.out.println("ID nhân viên phải là một số nguyên dương. Vui lòng nhập lại.");
+                scanner.nextLine();
+                return;
+            }
+        } catch (Exception e) {
+            System.out.println("Đã xảy ra lỗi khi nhập ID nhân viên. Vui lòng thử lại.");
+            scanner.nextLine();
+            return;
         }
         int employeeId = scanner.nextInt();
         scanner.nextLine();
@@ -263,6 +301,17 @@ public class DepartmentManagerImp implements DepartmentManager{
         System.out.println("Danh sách phòng ban hiện tại: ");
         displayDepartments(scanner);
         System.out.println("Nhập ID phòng ban để thống kê:");
+        try {
+            if (!scanner.hasNextInt()) {
+                System.out.println("ID phòng ban phải là một số nguyên dương. Vui lòng nhập lại.");
+                scanner.nextLine();
+                return;
+            }
+        } catch (Exception e) {
+            System.out.println("Đã xảy ra lỗi khi nhập ID phòng ban. Vui lòng thử lại.");
+            scanner.nextLine();
+            return;
+        }
         int departmentId = scanner.nextInt();
         scanner.nextLine();
         Department department = null;
