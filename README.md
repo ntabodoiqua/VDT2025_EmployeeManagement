@@ -47,10 +47,10 @@ employee_management/
 ## Yêu cầu hệ thống
 
 - **Java**: JDK 11 hoặc cao hơn
-- **IDE**: IntelliJ IDEA, Eclipse, hoặc bất kỳ IDE Java nào
+- **IDE**: IntelliJ IDEA
 - **Dependencies**:
-  - Lombok (để giảm boilerplate code)
-  - Java Time API (cho xử lý ngày tháng)
+  - Lombok 
+  - Java Time API
 
 ## Cài đặt và chạy
 
